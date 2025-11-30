@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Bordeaux background */
+    --background: 349 81% 26%;
+    --foreground: 0 0% 100%;
+
+    --card: 349 81% 30%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 349 81% 26%;
+    --popover-foreground: 0 0% 100%;
+
+    /* Bleu pour les boutons primaires */
+    --primary: 211 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Vert pour validation */
+    --secondary: 142 71% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 349 81% 35%;
+    --muted-foreground: 0 0% 85%;
+
+    /* Jaune pour statuts */
+    --accent: 45 100% 51%;
+    --accent-foreground: 349 81% 26%;
+
+    /* Rouge pour destructif */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 349 50% 40%;
+    --input: 349 50% 35%;
+    --ring: 211 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Transition pour animations professionnelles */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Ombres élégantes */
+    --shadow-elegant: 0 10px 30px -10px hsl(349 81% 10% / 0.5);
+    --shadow-card: 0 4px 12px -2px hsl(349 81% 10% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+  
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+}
